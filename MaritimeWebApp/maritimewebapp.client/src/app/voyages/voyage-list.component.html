@@ -1,0 +1,10 @@
+<h2>Voyages List</h2>
+
+<ul>
+  <li *ngFor="let voyage of voyages">
+    Voyage with ship {{ voyage.ship.name }}
+    from {{ voyage.departurePort.name }} ({{ voyage.departurePort.country }})
+    to {{ voyage.arrivalPort.name }} ({{ voyage.arrivalPort.country }})
+    on {{ voyage.voyageDate | date }}
+  </li>
+</ul>

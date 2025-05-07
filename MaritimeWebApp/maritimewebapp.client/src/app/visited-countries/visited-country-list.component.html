@@ -1,0 +1,7 @@
+<h2>Visited Countries</h2>
+
+<ul>
+  <li *ngFor="let c of countries">
+    {{ c.countryName }} – visited on {{ c.visitDate | date }} (Voyage ID: {{ c.voyageId }})
+  </li>
+</ul>
