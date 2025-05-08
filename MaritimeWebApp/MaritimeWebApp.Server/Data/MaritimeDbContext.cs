@@ -42,48 +42,6 @@ namespace MaritimeWebApp.Server.Data
                 new Port { Id = 3, Name = "Hamburg", Country = "Germany" }
             );
 
-            //Voyages
-            modelBuilder.Entity<Voyage>().HasData(
-                new Voyage
-                {
-                    Id = 1,
-                    ShipId = 1,
-                    DeparturePortId = 1,
-                    ArrivalPortId = 2,
-                    VoyageDate = new DateTime(2023, 5, 10),
-                    StartDate = new DateTime(2023, 5, 10),
-                    EndDate = new DateTime(2023, 5, 20)
-                },
-                new Voyage
-                {
-                    Id = 2,
-                    ShipId = 2,
-                    DeparturePortId = 2,
-                    ArrivalPortId = 3,
-                    VoyageDate = new DateTime(2023, 6, 1),
-                    StartDate = new DateTime(2023, 6, 1),
-                    EndDate = new DateTime(2023, 6, 12)
-                }
-            );
-
-            //VisitedCountries
-            modelBuilder.Entity<VisitedCountry>().HasData(
-                new VisitedCountry
-                {
-                    Id = 1,
-                    CountryName = "Bulgaria",
-                    VisitDate = new DateTime(2023, 5, 12),
-                    VoyageId = 1
-                },
-                new VisitedCountry
-                {
-                    Id = 2,
-                    CountryName = "Germany",
-                    VisitDate = new DateTime(2023, 6, 5),
-                    VoyageId = 2
-                }
-            );
-
             base.OnModelCreating(modelBuilder);
         }
     }

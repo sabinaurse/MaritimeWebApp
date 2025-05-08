@@ -28,14 +28,14 @@ namespace MaritimeWebApp.Server.Controllers
         [HttpGet("{id}")]
         public async Task<IActionResult> Get(int id)
         {
-            var voyage = await _context.Voyages
+            var voyages = await _context.Voyages
                 .Include(v => v.Ship)
                 .Include(v => v.DeparturePort)
                 .Include(v => v.ArrivalPort)
                 .Include(v => v.VisitedCountries)
                 .FirstOrDefaultAsync(v => v.Id == id);
 
-            return voyage == null ? NotFound() : Ok(voyage);
+            return voyages == null ? NotFound() : Ok(voyages);
         }
 
         [HttpPost]

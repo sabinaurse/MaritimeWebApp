@@ -13,3 +13,4 @@ export class VoyageService {
     return this.http.get<Voyage[]>(this.apiUrl);
   }
 }
+
